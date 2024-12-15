@@ -1,0 +1,22 @@
+<div class="container_walk">
+  <walk-header [userName]="userName"
+                   (onLogout)="logout()"></walk-header>
+
+  <div class="high_score"><score textLabel="High Score"
+             mode="highScore"
+             [score]="highScore"></score></div>
+
+  <walk-bulb [bulbState]="bulbState"></walk-bulb>
+
+<score textLabel="Score"
+             mode="currentScore"
+             [score]="score"></score>
+
+  <div class="container_btn">
+    <walk-button modeButton="left"
+      (onEvent)="sendEvent($event)"></walk-button>
+    <walk-button modeButton="right"
+      (onEvent)="sendEvent($event)"></walk-button>
+  </div>
+
+</div>

@@ -1,0 +1,20 @@
+.header_container {
+  background-color: #0379dd;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.header_container___user_name{
+  color: white;
+}
+
+.title_name{
+  font-size: 16px;
+}
+
+.header div {
+  flex: 1;
+  width: 50%;
+}
+

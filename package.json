@@ -10,7 +10,7 @@
     "start": "ng serve",
     "build": "ng build",
     "serve-http-pwa": "ng build --configuration=production && npx http-server dist/angular-pwa",
-    "build:prod": "ng build --configuration=production --base-href https://vitantonioc.github.io/walk/",
+    "build:prod": "ng build --configuration=production --base-href=/docs/",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:watch": "jest --watch",

@@ -1,0 +1,12 @@
+.bulb_container {
+  margin-top: 30px;
+  text-align: center;
+}
+.green {
+  color: green;
+  font-size: 6em;
+}
+.red {
+  color: red;
+  font-size: 6em;
+}
