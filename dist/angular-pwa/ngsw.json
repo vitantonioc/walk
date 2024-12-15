@@ -1,0 +1,109 @@
+{
+  "configVersion": 1,
+  "timestamp": 1734192943143,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/155.2de4f193d2781ed1.js",
+        "/466.9f54dbaa459c53d7.js",
+        "/698.3e6cc0c2600dc0f5.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main.68e08402fa3b3b4a.js",
+        "/manifest.webmanifest",
+        "/polyfills.a5d271ed9f967172.js",
+        "/runtime.d75841f5ae0c8327.js",
+        "/scripts.a5df712912c65b3f.js",
+        "/styles.1daabaacdef28d4b.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/icons/barefoot_50.svg",
+        "/assets/icons/cancel.svg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/lightbulb_circle.svg",
+        "/assets/icons/lightbulb_circle_green.svg",
+        "/assets/icons/lightbulb_circle_home.svg",
+        "/assets/icons/lightbulb_circle_red.svg",
+        "/assets/image/mountain-walk.jpg",
+        "/bootstrap-icons.6fdf98f9eb97d9e7.woff2",
+        "/bootstrap-icons.dba5e3b77b478961.woff",
+        "/mountain-walk.2931d736fcfba17f.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/155.2de4f193d2781ed1.js": "924f92c14165498c6308bd5b88f3c84773438ae9",
+    "/466.9f54dbaa459c53d7.js": "3d0e0e168e1f6b9cbb53b06322ad4d6e5a47952c",
+    "/698.3e6cc0c2600dc0f5.js": "9f1081b92e2e22e6c536daac423eef32b6a466bb",
+    "/assets/icons/barefoot_50.svg": "b5f05cb99e3d7954525f04316b654e8f031ca224",
+    "/assets/icons/cancel.svg": "5af66a2967ed5b2340d1a603497eb6a01842d40c",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/lightbulb_circle.svg": "4e21fc78b9e659e01f418b4eaa19b0a8f43e88ce",
+    "/assets/icons/lightbulb_circle_green.svg": "eaf9ce42cd225b59f26dbc9e5f74ca40e58cfc1a",
+    "/assets/icons/lightbulb_circle_home.svg": "97b9f5f60463d1ac444b003d5651ae4028914851",
+    "/assets/icons/lightbulb_circle_red.svg": "c4aa56dd536f665a592e5ec156489883495ac1a9",
+    "/assets/image/mountain-walk.jpg": "36a7dccb723fc6ab1eb30d5a6bbd1a60d584b811",
+    "/bootstrap-icons.6fdf98f9eb97d9e7.woff2": "3a284b0618771f29da8eb6be900e99439253dce0",
+    "/bootstrap-icons.dba5e3b77b478961.woff": "a77e6a2f335f3fcb4f2930794907c88ed7de7ca1",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "4da3b0e77b8e135371520bea3c0633fe72bec81b",
+    "/main.68e08402fa3b3b4a.js": "48c9f831739a219a722d64ecd062df4f2dae9060",
+    "/manifest.webmanifest": "05090a499b55f4c5540176d846cf171c8efd83ca",
+    "/mountain-walk.2931d736fcfba17f.jpg": "36a7dccb723fc6ab1eb30d5a6bbd1a60d584b811",
+    "/polyfills.a5d271ed9f967172.js": "eb930354f13ec7ca26f720f750839113783c6083",
+    "/runtime.d75841f5ae0c8327.js": "64ba392ef05de7355a3a8b712b54ff1a4c5d4fb9",
+    "/scripts.a5df712912c65b3f.js": "4e3dca74f78d4172e2f70f577e325019ba1b1898",
+    "/styles.1daabaacdef28d4b.css": "38e7fc4b94fc002cdb4fa038b54e129be4a696a8"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
