@@ -1,4 +1,5 @@
 # Walk app game Red Light, Green Light
+![Alt text](home.png)
 
 
 ## Prerequisites
