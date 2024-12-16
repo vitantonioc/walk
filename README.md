@@ -1,4 +1,5 @@
 # Walk app game Red Light, Green Light
+
 ![Alt text](home.png)
 
 
@@ -25,7 +26,7 @@ Installing dependencies from package.json
 
 ## Start application PWA
 
-* Generate a production build → 'serve-http-pwa' (npm run serve-http-pwa) -  This will create a new folder under your root application called dist. Your app files will be under dist/angular-pwa.
+* Generate a production build → 'serve-http-pwa' (npm run serve-http-pwa) -  This will create a new folder under your root application called dist. Your app files will be under docs.
 
 * Open browser in this path : http//localhost: 8080 (for the correct PWA is need https or http://localhost:8080)
 
@@ -33,7 +34,7 @@ All of a sudden you will see a button in the chrome browser which can install yo
 
 ## Build
 
-Run `ng build` (or npm run build) to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` (or npm run build) to build the project. The build artifacts will be stored in the `docs/` directory.
 
 
 ## Running unit tests
