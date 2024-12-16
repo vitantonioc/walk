@@ -67,9 +67,7 @@ export class WalkComponent implements OnInit , OnDestroy{
     this.newStep === step ? this.score++ : this.score > 0 ? this.score-- : null;
     this.highScore < this.score  ? this.highScore = this.score :null;
     this.bulbState === GetWalkValues.GREEN ? this.checkGreenLight(): null;
-    this.newStep === GetWalkValues.LEFT ? this.newStep = GetWalkValues.RIGHT : this.newStep = GetWalkValues.LEFT
-    const highscore = GetWalkValues.HIGHSCORE;
-    const score = GetWalkValues.SCORE
+    this.newStep === GetWalkValues.LEFT ? this.newStep = GetWalkValues.RIGHT : this.newStep = GetWalkValues.LEFT;
     this.walkServices.saveScores({
       highscore: this.highScore,
       score: this.score
@@ -77,6 +75,9 @@ export class WalkComponent implements OnInit , OnDestroy{
     this.startTimer();
   }  
 
+   /**
+   * Start Timer with calculation observable and restart same timer when countdown run
+   */
   startTimer()  {  
    this.initialTimeCountDown === false ? this.timeCountDown > 20 ? this.timeCountDown = this.timeCountDown - 10 : this.timeCountDown : this.initialTimeCountDown = false;   
     this.timerSub && this.timerSub.unsubscribe();
@@ -115,7 +116,6 @@ export class WalkComponent implements OnInit , OnDestroy{
   checkGreenLight() { 
     const checkRandomValue = Math.max(10000 - this.score * 100, 2000) + this.getRandom(-1500, 1500);
     this.time = (checkRandomValue/100).toFixed(0);
-    //return checkRandomValue;
   }
 
   /**
