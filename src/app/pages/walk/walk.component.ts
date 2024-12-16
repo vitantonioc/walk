@@ -55,9 +55,7 @@ export class WalkComponent implements OnInit , OnDestroy{
    * Data initialization
    */
   sendEvent(step: string) { 
-    if(this.bulbState === GetWalkValues.GREEN){
-      this.getSendEvent(step);
-    }       
+    this.bulbState === GetWalkValues.GREEN ? this.getSendEvent(step) : this.score = 0;   
   }
 
    /**

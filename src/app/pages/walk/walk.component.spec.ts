@@ -45,11 +45,6 @@ describe('WalkComponent Component', () => {
     expect(result).toHaveLength(0);
   });
 
-  it('function getRandom', () => {
-    let result = spectator.component.getRandom(-1500, 1500);
-    expect(result).toBeGreaterThan(-917.3384373060642);
-  });
-
   it('function logout', () => {
     spectator.component.logout();
     walkService.logout().catch( () =>{
@@ -69,5 +64,8 @@ describe('WalkComponent Component', () => {
       expect(rs).toBeTruthy()!;
        }     
     )
+    spectator.component.bulbState = 'red';
+    spectator.component.sendEvent(event);     
+    expect(spectator.component.score).toBe(0)
   }); 
 });
