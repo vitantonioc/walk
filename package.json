@@ -9,7 +9,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "serve-http-pwa": "ng build --configuration=production && npx http-server dist/angular-pwa",
+    "serve-http-pwa": "ng build --configuration=production && npx http-server docs/",
     "build:prod": "ng build --configuration=production --base-href=/docs/",
     "watch": "ng build --watch --configuration development",
     "test": "jest",

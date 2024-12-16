@@ -23,7 +23,7 @@ export class WalkComponent implements OnInit , OnDestroy{
  timer$!: Observable<number>;
  timerSub!: Subscription;
 
- private time: any;
+ time: any;
 
   constructor(
     private walkServices: WalkService,
@@ -34,7 +34,9 @@ export class WalkComponent implements OnInit , OnDestroy{
     this.score = this.walkServices.score;
   }
   ngOnDestroy(): void {
+    if (this.timerSub) {
     this.timerSub.unsubscribe()
+    }
   }
 
   /**

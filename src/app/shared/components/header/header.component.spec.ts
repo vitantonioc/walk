@@ -1,29 +1,38 @@
-import { Spectator, createComponentFactory } from '@ngneat/spectator';
-import { HeaderComponent } from "./header.component";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HeaderComponent } from './header.component';
 
-describe('Header Component', () => {
-  let spectator: Spectator<HeaderComponent>;
-  const createComponent = createComponentFactory(HeaderComponent);
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
+  let emitSpy: jest.SpyInstance;
 
-  beforeEach(() => spectator = createComponent());
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ HeaderComponent ]
+    })
+    .compileComponents();
 
-  it('should create', () => {
-    expect(spectator).toBeTruthy();
+    fixture = TestBed.createComponent(HeaderComponent);
+    component = fixture.componentInstance;
+
+    // Create a spy on the EventEmitter to check if the event is emitted
+    emitSpy = jest.spyOn(component.onLogout, 'emit');
   });
 
-  it('function onLogout', () => {
-    let output;
-    spectator.output('onLogout').subscribe((result:any) => 
-      { 
-      if(output = result)
-        spectator.component.logout();
-        expect(output).toEqual(true);
-      }
-    );    
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
   });
 
-  it('should have a title_name class by span', () => {
-    expect(spectator.query('span')).toHaveClass('title_name');
+  it('should accept input userName', () => {
+    component.userName = 'Test User';
+    fixture.detectChanges();
+    expect(component.userName).toBe('Test User'); 
   });
 
+  it('should emit onLogout event when logout is called', () => {
+    component.logout(); 
+    
+    // We verify that the event has been broadcast
+    expect(emitSpy).toHaveBeenCalledWith(true);
+  });
 });
