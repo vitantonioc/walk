@@ -1,5 +1,6 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 import { ButtonComponent } from "./button.component";
+import { jest } from '@jest/globals';
 
 describe('Button Component', () => {
   let spectator: Spectator<ButtonComponent>;
@@ -20,18 +21,10 @@ describe('Button Component', () => {
     expect(spectator.component.textButton).toEqual("LEFT");
   });
 
- /* it('function clickBtn', () => {
-    let output;
-    
-    spectator.detectChanges();
-    spectator.component.modeButton = "left";  
-
-    spectator.output('clickBtn').subscribe((result:any) => 
-      {
-        if(output = result)
-          spectator.component.clickBtn('left');
-          expect(output).toEqual('left');
-      });
-  }); */
-
+  it('function clickBtn', () => {
+    let spy = jest.spyOn(spectator.component, 'clickBtn');
+    const modeButton = 'Left'
+    spectator.component.clickBtn(modeButton);
+    expect(spy).toHaveBeenCalled();
+  });
 });
