@@ -1,63 +1,67 @@
-import { Spectator, createComponentFactory } from '@ngneat/spectator';
-import { RouterTestingModule } from '@angular/router/testing';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HomeComponent } from "./home.component";
-import { WalkService } from '../../services/walk.service';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { jest } from '@jest/globals';
+import { HomeComponent } from './home.component';
+import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { WalkService } from '../../services/walk.service';
 
-const formGroup = new FormGroup({
-  authForm: new FormControl('', [Validators.required]),
-});
 
-describe('HomeComponent Component', () => {
-  let spectator: Spectator<HomeComponent>;
+describe('HomeComponent', () => {
   let component: HomeComponent;
-  let walkService = new WalkService;
-  let router: Router
   let fixture: ComponentFixture<HomeComponent>;
-  const createComponent = createComponentFactory({
-    component: HomeComponent,
-    imports:[
-      RouterTestingModule,
-      ReactiveFormsModule
-    ],
-    providers: [
-      { provide: WalkService }
-    ],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
-  });
+  let routerMock: jest.Mocked<Router>;
+  let walkServiceMock: jest.Mocked<WalkService>;
+
 
   beforeEach(() => {
-    spectator = createComponent();
-    fixture = TestBed.createComponent(HomeComponent);
-    walkService = new WalkService();
-    component = fixture.debugElement.componentInstance;});
+    jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    it('should create', () => {
-      fixture.detectChanges();
-      expect(spectator).toBeTruthy();
+    // Mocks dependencies
+    routerMock = {
+      navigateByUrl: jest.fn()
+    } as unknown as jest.Mocked<Router>;
+
+    walkServiceMock = {
+      loginUser: jest.fn()
+    } as unknown as jest.Mocked<WalkService>;
+
+    TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
+      declarations: [HomeComponent],
+      providers: [
+        FormBuilder,
+        { provide: Router, useValue: routerMock },
+        { provide: WalkService, useValue: walkServiceMock }
+      ]
     });
-  
-  
-  it('function ngOnInit', () => {
-    spectator.component.ngOnInit();
-    const spyformReset = jest.spyOn(spectator.component.authForm, 'reset');
-    spectator.component.authForm.reset();
-    expect(spyformReset).toHaveBeenCalled();   
-  });
- 
-  it('should call login user', () => {
+
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const user = 'test'
-    formGroup.controls.authForm.get('user')?.setValue(user);
-    spectator.component.enterUser()
-    walkService.loginUser(user).catch( rs =>{
-      expect(router!.navigateByUrl('/walk')).toBeTruthy()!;
-    })   
   });
 
+  it('should handle error and not navigate when loginUser fails', async () => {
+    component.authForm.controls['user'].setValue('validUser');
+    component.authForm.controls['user'].markAsTouched();
+    component.authForm.controls['user'].markAsDirty();
+    fixture.detectChanges();
 
+    // We simulate an error in loginUser
+    walkServiceMock.loginUser.mockRejectedValueOnce(new Error('Login failed'));
+
+    // We call the enterUser() method
+    await component.enterUser();
+
+    // We verify that loginUser has been called with the correct value
+    expect(walkServiceMock.loginUser).toHaveBeenCalledWith('validUser');
+
+    // We verify that the navigation did not occur due to the error
+    expect(routerMock.navigateByUrl).not.toHaveBeenCalled();
+
+    // We verify that console.error was called with the correct message
+    expect(console.error).toHaveBeenCalledWith('Error during login', new Error('Login failed'));
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
 });

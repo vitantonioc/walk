@@ -29,11 +29,14 @@ export class HomeComponent implements OnInit{
     this.authForm.reset();
   }
 
-  enterUser() {
+  async enterUser() {
     if (this.authForm.status === "VALID") {
-      this.walkService.loginUser(this.authForm.value.user).then(() => {
+      try {
+        await this.walkService.loginUser(this.authForm.value.user);
         this.router.navigateByUrl('/walk');
-      });
+      } catch (error) {
+        console.error('Error during login', error);
+      }
     }
   }
 }
