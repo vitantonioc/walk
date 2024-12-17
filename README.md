@@ -35,7 +35,7 @@ All of a sudden you will see a button in the chrome browser which can install yo
 
 ## GitHub Pages PWA
 
-https://github.com/vitantonioc/walk
+https://vitantonioc.github.io/walk
 
 
 ## Build
