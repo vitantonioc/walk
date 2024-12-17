@@ -49,4 +49,4 @@ Run `ng test` (or npm run test) to execute the unit tests via [jest](https://jes
 
 ## Play walk 
 
-To play it is necessary to press one step button at a time and so the score increases, if you press the same button twice in a row it decreases the score. You have to wait for the green light to press the buttons. There will be a maximum score obtained by the user, it is possible to enter with the same user and continue walking
+To play you need to press one button step at a time and so the score increases, if you press the same button twice in a row the score decreases. You have to wait for the green light to press the buttons. If you press the right or left button when the traffic light is red you will lose all the points you have scored in the game. There will be a maximum score obtained by the user, it is possible to enter with the same user and continue the walk.
