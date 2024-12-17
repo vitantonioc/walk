@@ -32,6 +32,12 @@ Installing dependencies from package.json
 
 All of a sudden you will see a button in the chrome browser which can install your application and open in window popup
 
+
+## GitHub Pages PWA
+
+https://github.com/vitantonioc/walk
+
+
 ## Build
 
 Run `ng build` (or npm run build) to build the project. The build artifacts will be stored in the `docs/` directory.
